@@ -1,7 +1,3 @@
 #!/bin/bash
+echo "Best School" > \\\*\\\\"'\"Best School\"\\'"\\\\\*\$\\\?\\\*\\\*\\\*\\\*\\\*\:\)
 
-# Escape all the special characters in the filename
-filename="\*\\\\'\"Best School\"\'\\\\*\$\\?\\*\*\*\*\*:)"
-
-# Create the file with the specified name
-echo "Best School" > "$filename"
