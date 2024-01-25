@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#displays content of current directory in list format.
+
+for file in *; do
+    if [[ -f $file && $file =~ ^[0-9]+-(.*)$ ]]; then
+        echo "${BASH_REMATCH[1]}"
+    fi
+done
+
