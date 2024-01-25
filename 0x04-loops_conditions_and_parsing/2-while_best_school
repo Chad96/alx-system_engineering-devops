@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Initialize a counter
 counter=0
@@ -8,3 +8,4 @@ while [ $counter -lt 10 ]; do
     echo "Best School"
     ((counter++))
 done
+
