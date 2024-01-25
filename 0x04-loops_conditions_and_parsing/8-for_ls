@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-#displays content of current directory in list format.
+#displays content of current directory in list format
 
 for file in *; do
-    if [[ -f $file && $file =~ ^[0-9]+-(.*)$ ]]; then
-        echo "${BASH_REMATCH[1]}"
+
+    if [[ ! "$file" =~ ^\.[^.].* && "$file" =~ ^[0-9]+-.* ]]; then
+        # Extract the part of the name after the first dash
+        name=$(echo "$file" | cut -d'-' -f2-)
+        echo "$name"
     fi
 done
 
