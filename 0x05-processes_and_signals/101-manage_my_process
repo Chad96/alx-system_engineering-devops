@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# This script manages the lifecycle of manage_my_process
+
+PID_FILE="/var/run/my_process.pid"
+
+case "$1" in
+    start)
+        if [ -f "$PID_FILE" ]; then
+            echo "manage_my_process is already running."
+        else
+            ./manage_my_process &
+            echo $! > "$PID_FILE"
+            echo "manage_my_process started"
+        fi
+        ;;
+    stop)
+        if [ -f "$PID_FILE" ]; then
+            pid=$(cat "$PID_FILE")
+            sudo kill -SIGTERM "$pid"
+            rm -f "$PID_FILE"
+            echo "manage_my_process stopped"
+        else
+            echo "manage_my_process is not running."
+        fi
+        ;;
+    restart)
+        $0 stop
+        sleep 2
+        $0 start
+        echo "manage_my_process restarted"
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
+
+exit 0
