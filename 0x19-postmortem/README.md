@@ -1,8 +1,8 @@
 Issue Summary:
 
 Duration:
-Start Time: May 3, 2024, 10:00 PM PDT
-End Time: May 4, 2024, 3:00 AM PDT
+Start Time: May 3, 2024, 10:00 PM 
+End Time: May 4, 2024, 3:00 AM 
 Impact:
 The service downtime affected the web application, resulting in a complete outage for all users. Approximately 95% of users were unable to access the platform during the incident.
 Root Cause:
